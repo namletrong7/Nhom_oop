@@ -6,6 +6,8 @@
 package testproject.view;
 
 import java.awt.Desktop;
+import java.awt.Toolkit;
+import java.awt.event.WindowEvent;
 import java.net.URL;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -24,7 +26,10 @@ public class Menu extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         this.setTitle("Menu");
     }
-
+public void close(){
+       WindowEvent closeWindow= new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
+       Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(closeWindow);
+   }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -91,7 +96,7 @@ public class Menu extends javax.swing.JFrame {
 
         nhapThongTinPhong.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         nhapThongTinPhong.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testproject/view/icon/iconROm.png"))); // NOI18N
-        nhapThongTinPhong.setText("Thông tin Phòng");
+        nhapThongTinPhong.setText("Thông Tin Phòng");
         nhapThongTinPhong.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 nhapThongTinPhongFocusLost(evt);
@@ -239,6 +244,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_DatPhongFocusLost
 
     private void nhapThongTinPhongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nhapThongTinPhongActionPerformed
+        close();
         NhapThongTinPhong phong = new NhapThongTinPhong();
         phong.setVisible(true);
         phong.pack();
@@ -246,6 +252,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_nhapThongTinPhongActionPerformed
 
     private void nhapThongTinKhachHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nhapThongTinKhachHangActionPerformed
+         close();
         NhapThongTinKhachHang kh = new NhapThongTinKhachHang();
         kh.setVisible(true);
         kh.pack();
@@ -253,6 +260,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_nhapThongTinKhachHangActionPerformed
 
     private void DatPhongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DatPhongActionPerformed
+        close();
         DatPhongView dp = new DatPhongView();
         dp.setVisible(true);
         dp.pack();
@@ -260,8 +268,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_DatPhongActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-        JOptionPane.showMessageDialog(rootPane,
-                "Nhấn OK để có thể tắt chương trình", "Backup problem", JOptionPane.ERROR_MESSAGE);
+      
 //         JFrame frame = new JFrame();
 //         JOptionPane.showInputDialog(frame, "bạn nhạp gì");
     }//GEN-LAST:event_formWindowClosing

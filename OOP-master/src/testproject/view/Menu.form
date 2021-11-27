@@ -157,7 +157,7 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/testproject/view/icon/iconROm.png"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Th&#xf4;ng tin Ph&#xf2;ng"/>
+        <Property name="text" type="java.lang.String" value="Th&#xf4;ng Tin Ph&#xf2;ng"/>
       </Properties>
       <Events>
         <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="nhapThongTinPhongFocusLost"/>
