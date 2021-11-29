@@ -24,6 +24,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import testproject.model.DocGhiFile;
 import testproject.model.DatPhong;
+import testproject.model.KhachHang;
 import testproject.model.Phong;
 
 /**
@@ -40,6 +41,7 @@ public class DatPhongView extends javax.swing.JFrame {
 
     List<DatPhong> listDP = new ArrayList<>();
     List<Phong> listP = new ArrayList<>();
+     List<KhachHang> listKH= new ArrayList<>();
     DocGhiFile docGhiFile = new DocGhiFile();
     private static final String curentDir = System.getProperty("user.dir");
     private static final String separator = File.separator;
@@ -47,6 +49,8 @@ public class DatPhongView extends javax.swing.JFrame {
     private static final String PATH_FILE_CSV_PHONG = curentDir + separator + "data" + separator + "Phong.csv";
     public static File fileDP = new File(PATH_FILE_CSV_DatPhong);
     public static File fileP = new File(PATH_FILE_CSV_PHONG);
+    private static final String PATH_FILE_CSV_KhachHang = curentDir + separator + "data" + separator + "KhachHang.csv";
+    public static File fileKH = new File(PATH_FILE_CSV_KhachHang);
 
     public DatPhongView() {
         this.dispose();
@@ -58,24 +62,36 @@ public class DatPhongView extends javax.swing.JFrame {
 
         if (fileDP.exists()) {
             try {
-                listDP = docGhiFile.docFileDatPhong();
-                String ma = listDP.get(listDP.size() - 1).getMaDatPhong();
-                id = Integer.parseInt(ma.substring(2)) + 1;
-                hienTHi(listDP);
+               listDP = docGhiFile.docFileDatPhong();
+                if( listDP.size() == 0){
+                 fileDP.delete();
+                    DatPhongView dp = new DatPhongView();
+                    dp.setVisible(true);
+                }
+                else{
+                    String ma =  listDP.get(  listDP.size() - 1).getMaDatPhong();
+                    id = Integer.parseInt(ma.substring(2)) + 1;
+                   hienTHi(listDP);
+                }      
             } catch (CsvValidationException ex) {
                 Logger.getLogger(DatPhongView.class.getName()).log(Level.SEVERE, null, ex);
             } catch (ParseException ex) {
                 Logger.getLogger(DatPhongView.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+        if (fileKH.exists()) {
+            try {
+                listKH = docGhiFile.docFileKhachHang();
+            } catch (CsvValidationException ex) {
+                Logger.getLogger(DatPhongView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
         if (fileP.exists()) {
-
             try {
                 listP = docGhiFile.docFilePhong();
             } catch (CsvValidationException ex) {
                 Logger.getLogger(DatPhongView.class.getName()).log(Level.SEVERE, null, ex);
             }
-
         }
     }
 

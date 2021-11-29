@@ -147,24 +147,19 @@
               </Group>
               <EmptySpace type="unrelated" pref="37" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="btnXoa" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnChinhSua" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnThemThongTin" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnReSet" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" alignment="1" groupAlignment="3" attributes="0">
+                      <Component id="btnXoa" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnChinhSua" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnThemThongTin" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnReSet" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="btnSapXep" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnTimKiem" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnLuuFiile" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" alignment="1" groupAlignment="3" attributes="0">
+                      <Component id="btnSapXep" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnTimKiem" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnLuuFiile" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="438" max="-2" attributes="0"/>
           </Group>
       </Group>

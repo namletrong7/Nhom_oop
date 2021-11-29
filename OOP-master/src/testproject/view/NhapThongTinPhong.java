@@ -48,13 +48,20 @@ public class NhapThongTinPhong extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         this.setTitle("Nhập thông tin phòng");
         tableModel = (DefaultTableModel) tblPhong.getModel();
-
-        if (file.exists()) {
+  if (file.exists()) {
             try {
                 listPhong = docGhiFile.docFilePhong();
-                String ma = listPhong.get(listPhong.size() - 1).getMaPhong();
-                id = Integer.parseInt(ma.substring(2)) + 1;
-                hienTHi(listPhong);
+                if(listPhong.size()==0){
+                    file.delete();
+                    NhapThongTinPhong phong = new NhapThongTinPhong();
+                    phong.setVisible(true);
+                }
+                else{
+                    String ma = listPhong.get(listPhong.size() - 1).getMaPhong();
+                    id = Integer.parseInt(ma.substring(2)) + 1;
+                    hienTHi(listPhong);
+                }
+               
             } catch (CsvValidationException ex) {
                 Logger.getLogger(NhapThongTinPhong.class.getName()).log(Level.SEVERE, null, ex);
             }
