@@ -89,6 +89,7 @@ public class DangNhap extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 204, 102));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosed(java.awt.event.WindowEvent evt) {
                 formWindowClosed(evt);
@@ -202,7 +203,7 @@ public class DangNhap extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnDangNhap)
-                    .addComponent(btnDangNhap1))
+                    .addComponent(btnDangNhap1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(69, 69, 69)
                 .addComponent(DangKy)
                 .addContainerGap(98, Short.MAX_VALUE))
