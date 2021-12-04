@@ -278,6 +278,8 @@ public class DangKyView extends javax.swing.JFrame {
 
     }//GEN-LAST:event_bnbHuyActionPerformed
  
+ 
+
     private void btnDangKyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDangKyActionPerformed
         StringBuilder sb = new StringBuilder();
         if (txtHo.getText().equals("")) {
@@ -302,18 +304,8 @@ public class DangKyView extends javax.swing.JFrame {
                     sb.toString(), "Backup problem", JOptionPane.WARNING_MESSAGE);
             return;
         }
-        
-       boolean flag = false ;
-        for (DangKy itemDK : listDangKy) {
-            if (itemDK.getTenDangNhap().equals(txtTenDangNhap.getText())) {
-              
-      JOptionPane.showConfirmDialog(rootPane, "Tên đăng nhập đã tồn tại\n bạn hãy chọn tên đăng nhập khác", "Thông báo", JOptionPane.ERROR_MESSAGE);
-             flag =false ;
-      
-            }
-        }
-        if(flag==true){
-             String ho = txtHo.getText();
+    
+            String ho = txtHo.getText();
             String ten = txtTen.getText();
             String tenDangNhap = txtTenDangNhap.getText();
             String mk = txtMK.getText();
@@ -325,7 +317,7 @@ public class DangKyView extends javax.swing.JFrame {
             docGhiFile.ghiFileDangKy(listDangKy);
             JOptionPane.showConfirmDialog(rootPane, "Đăng ký tài khoản thành công\n Bây giờ bạn có thể đăng nhập", "Thông báo", JOptionPane.PLAIN_MESSAGE);
             reSet();
-        }
+     
            
        
 
