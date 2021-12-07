@@ -121,6 +121,7 @@ public class NhapThongTinPhong extends javax.swing.JFrame {
         boxSapXep = new javax.swing.JComboBox<>();
         btnReSet = new javax.swing.JButton();
         btnLuuFile = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -128,6 +129,7 @@ public class NhapThongTinPhong extends javax.swing.JFrame {
                 formWindowClosing(evt);
             }
         });
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(190, 220, 227));
 
@@ -148,9 +150,9 @@ public class NhapThongTinPhong extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(jButton3)
-                .addGap(121, 121, 121)
+                .addGap(184, 184, 184)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 624, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(298, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -163,8 +165,12 @@ public class NhapThongTinPhong extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1179, 61));
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(51, 51, 0));
         jLabel3.setText("Loại Phòng: ");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(97, 168, -1, -1));
 
         txtSoTang.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
@@ -176,9 +182,12 @@ public class NhapThongTinPhong extends javax.swing.JFrame {
                 txtSoTangActionPerformed(evt);
             }
         });
+        getContentPane().add(txtSoTang, new org.netbeans.lib.awtextra.AbsoluteConstraints(215, 100, 240, 33));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 51, 51));
         jLabel4.setText("Số tầng: ");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(124, 104, -1, -1));
 
         txtLoaiPhong.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
@@ -190,9 +199,12 @@ public class NhapThongTinPhong extends javax.swing.JFrame {
                 txtLoaiPhongActionPerformed(evt);
             }
         });
+        getContentPane().add(txtLoaiPhong, new org.netbeans.lib.awtextra.AbsoluteConstraints(215, 164, 240, 33));
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(51, 0, 51));
         jLabel6.setText("Giá Phòng:");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(685, 104, -1, -1));
 
         txtGiaPhong.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
@@ -204,6 +216,7 @@ public class NhapThongTinPhong extends javax.swing.JFrame {
                 txtGiaPhongActionPerformed(evt);
             }
         });
+        getContentPane().add(txtGiaPhong, new org.netbeans.lib.awtextra.AbsoluteConstraints(803, 100, 240, 33));
 
         ThemThongTin.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         ThemThongTin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testproject/view/icon/sign-add-icon.png"))); // NOI18N
@@ -213,6 +226,7 @@ public class NhapThongTinPhong extends javax.swing.JFrame {
                 ThemThongTinActionPerformed(evt);
             }
         });
+        getContentPane().add(ThemThongTin, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 252, -1, -1));
 
         ChinhSua.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         ChinhSua.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testproject/view/icon/icons8-pencil-48.png"))); // NOI18N
@@ -222,6 +236,7 @@ public class NhapThongTinPhong extends javax.swing.JFrame {
                 ChinhSuaActionPerformed(evt);
             }
         });
+        getContentPane().add(ChinhSua, new org.netbeans.lib.awtextra.AbsoluteConstraints(235, 252, -1, -1));
 
         xoa.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         xoa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testproject/view/icon/icons8-trash-48.png"))); // NOI18N
@@ -231,6 +246,7 @@ public class NhapThongTinPhong extends javax.swing.JFrame {
                 xoaActionPerformed(evt);
             }
         });
+        getContentPane().add(xoa, new org.netbeans.lib.awtextra.AbsoluteConstraints(422, 252, -1, -1));
 
         btnLocThongTin.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnLocThongTin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testproject/view/icon/icon-sapxep.png"))); // NOI18N
@@ -240,6 +256,7 @@ public class NhapThongTinPhong extends javax.swing.JFrame {
                 btnLocThongTinActionPerformed(evt);
             }
         });
+        getContentPane().add(btnLocThongTin, new org.netbeans.lib.awtextra.AbsoluteConstraints(857, 252, -1, -1));
 
         tblPhong.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -270,6 +287,8 @@ public class NhapThongTinPhong extends javax.swing.JFrame {
             tblPhong.getColumnModel().getColumn(1).setMaxWidth(100);
         }
 
+        getContentPane().add(tablePhong, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 334, 1179, 512));
+
         btnTimKiem.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnTimKiem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testproject/view/icon/iconTimKiem.png"))); // NOI18N
         btnTimKiem.setText("Tìm kiếm");
@@ -278,6 +297,7 @@ public class NhapThongTinPhong extends javax.swing.JFrame {
                 btnTimKiemActionPerformed(evt);
             }
         });
+        getContentPane().add(btnTimKiem, new org.netbeans.lib.awtextra.AbsoluteConstraints(557, 252, -1, -1));
 
         txtTimKiem.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         txtTimKiem.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -290,12 +310,16 @@ public class NhapThongTinPhong extends javax.swing.JFrame {
                 txtTimKiemActionPerformed(evt);
             }
         });
+        getContentPane().add(txtTimKiem, new org.netbeans.lib.awtextra.AbsoluteConstraints(803, 163, 113, 33));
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(51, 0, 51));
         jLabel7.setText("Chức năng:");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(681, 169, -1, 20));
 
         boxSapXep.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         boxSapXep.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ma Phong", "Gia", "Tang", "Gia Tang", "Tang Gia" }));
+        getContentPane().add(boxSapXep, new org.netbeans.lib.awtextra.AbsoluteConstraints(925, 163, 113, 33));
 
         btnReSet.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testproject/view/icon/iconLamMoi.png"))); // NOI18N
         btnReSet.setText("Reset");
@@ -304,6 +328,7 @@ public class NhapThongTinPhong extends javax.swing.JFrame {
                 btnReSetActionPerformed(evt);
             }
         });
+        getContentPane().add(btnReSet, new org.netbeans.lib.awtextra.AbsoluteConstraints(724, 253, -1, -1));
 
         btnLuuFile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testproject/view/icon/icons8-save-as-48.png"))); // NOI18N
         btnLuuFile.setText("Lưu File");
@@ -312,86 +337,11 @@ public class NhapThongTinPhong extends javax.swing.JFrame {
                 btnLuuFileActionPerformed(evt);
             }
         });
+        getContentPane().add(btnLuuFile, new org.netbeans.lib.awtextra.AbsoluteConstraints(1024, 253, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(tablePhong)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(97, 97, 97)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel3))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtSoTang, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtLoaiPhong, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(ThemThongTin)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(ChinhSua)
-                        .addGap(26, 26, 26)
-                        .addComponent(xoa)))
-                .addGap(16, 16, 16)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(138, 138, 138)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel7))
-                        .addGap(31, 31, 31)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtGiaPhong, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(txtTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(boxSapXep, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addComponent(btnTimKiem)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnReSet)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnLocThongTin)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
-                        .addComponent(btnLuuFile)
-                        .addGap(22, 22, 22))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtSoTang, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4)
-                    .addComponent(txtGiaPhong, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtLoaiPhong, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3)
-                    .addComponent(txtTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(boxSapXep, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(55, 55, 55)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ThemThongTin)
-                    .addComponent(ChinhSua)
-                    .addComponent(xoa)
-                    .addComponent(btnTimKiem)
-                    .addComponent(btnReSet)
-                    .addComponent(btnLocThongTin)
-                    .addComponent(btnLuuFile))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
-                .addComponent(tablePhong, javax.swing.GroupLayout.PREFERRED_SIZE, 512, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testproject/view/icon/nen-gioithieu.jpg"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 1180, 270));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -690,6 +640,7 @@ public void close(){
     private javax.swing.JButton btnTimKiem;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;

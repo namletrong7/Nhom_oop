@@ -39,6 +39,7 @@ public void close(){
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        datPhongView1 = new testproject.view.DatPhongView();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -46,13 +47,15 @@ public void close(){
         nhapThongTinPhong = new javax.swing.JButton();
         nhapThongTinKhachHang = new javax.swing.JButton();
         DatPhong = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         DoanhTHu = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -63,6 +66,7 @@ public void close(){
                 formWindowClosing(evt);
             }
         });
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(190, 220, 227));
 
@@ -89,7 +93,7 @@ public void close(){
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel3)
-                .addContainerGap(438, Short.MAX_VALUE))
+                .addContainerGap(320, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -102,6 +106,8 @@ public void close(){
                     .addComponent(jLabel3))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1370, 60));
 
         nhapThongTinPhong.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         nhapThongTinPhong.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testproject/view/icon/iconROm.png"))); // NOI18N
@@ -116,6 +122,7 @@ public void close(){
                 nhapThongTinPhongActionPerformed(evt);
             }
         });
+        getContentPane().add(nhapThongTinPhong, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 100, 440, 73));
 
         nhapThongTinKhachHang.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         nhapThongTinKhachHang.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testproject/view/icon/iconNguoi.png"))); // NOI18N
@@ -130,6 +137,7 @@ public void close(){
                 nhapThongTinKhachHangActionPerformed(evt);
             }
         });
+        getContentPane().add(nhapThongTinKhachHang, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 180, 440, 77));
 
         DatPhong.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         DatPhong.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testproject/view/icon/iconBookHotel.png"))); // NOI18N
@@ -144,8 +152,7 @@ public void close(){
                 DatPhongActionPerformed(evt);
             }
         });
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testproject/view/icon/hotel-icon.png"))); // NOI18N
+        getContentPane().add(DatPhong, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 270, 440, 80));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testproject/view/icon/icons8-customer-support-48.png"))); // NOI18N
         jButton1.setText("0337356550");
@@ -154,6 +161,7 @@ public void close(){
                 jButton1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 500, 190, -1));
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testproject/view/icon/icon-fb.png"))); // NOI18N
         jButton2.setText("Lê Trọng Nam");
@@ -162,6 +170,7 @@ public void close(){
                 jButton2ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 570, 195, 60));
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testproject/view/icon/iconIn.png"))); // NOI18N
         jButton3.setText("lenam_108");
@@ -170,6 +179,7 @@ public void close(){
                 jButton3ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 500, 195, 58));
 
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testproject/view/icon/iconYou.png"))); // NOI18N
         jButton4.setText("KMA_hotel");
@@ -178,9 +188,12 @@ public void close(){
                 jButton4ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 570, 190, -1));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 3, 16)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(51, 255, 51));
         jLabel4.setText("Hệ thống hỗ trợ dịch vụ khách sạn trực tuyến");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 460, -1, -1));
 
         DoanhTHu.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         DoanhTHu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testproject/view/icon/icon_doanhThu.png"))); // NOI18N
@@ -190,73 +203,17 @@ public void close(){
                 DoanhTHuActionPerformed(evt);
             }
         });
+        getContentPane().add(DoanhTHu, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 360, 440, 80));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(370, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(nhapThongTinPhong, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(nhapThongTinKhachHang, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(100, 100, 100)
-                                .addComponent(jLabel2)))
-                        .addGap(678, 678, 678))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(DatPhong, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(DoanhTHu, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
-                                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(78, 78, 78)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton1)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addGap(43, 43, 43)))
-                        .addGap(37, 37, 37))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(nhapThongTinPhong, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(nhapThongTinKhachHang, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(DatPhong, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(DoanhTHu, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(16, 16, 16)
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton4)))))
-                .addGap(87, 87, 87))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testproject/view/icon/icon-wings.png"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 1370, 380));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testproject/view/icon/nen-menu.jpg"))); // NOI18N
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 1370, 660));
+
+        jLabel6.setText("jLabel6");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 650, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -334,14 +291,18 @@ public void close(){
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void DoanhTHuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DoanhTHuActionPerformed
+          close();
         DoanhThu dt = new DoanhThu();
         dt.setVisible(true);
-        dt.pack();
-        dt.setLocationRelativeTo(null);
+       
     }//GEN-LAST:event_DoanhTHuActionPerformed
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-        close();
+            int chon=JOptionPane.showConfirmDialog(null, "Bạn có chắc chắn muốn đăng xuất","Thông báo", JOptionPane.YES_NO_OPTION);
+         if(chon==JOptionPane.NO_OPTION){
+             return ;
+         }
+          close();
           new DangNhap().setVisible(true);
     }//GEN-LAST:event_jLabel5MouseClicked
 
@@ -383,6 +344,7 @@ public void close(){
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton DatPhong;
     private javax.swing.JButton DoanhTHu;
+    private testproject.view.DatPhongView datPhongView1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -392,6 +354,8 @@ public void close(){
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JButton nhapThongTinKhachHang;
     private javax.swing.JButton nhapThongTinPhong;
