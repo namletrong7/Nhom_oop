@@ -170,7 +170,7 @@ public class NhapThongTinPhong extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(51, 51, 0));
         jLabel3.setText("Loại Phòng: ");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(97, 168, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, -1, -1));
 
         txtSoTang.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
@@ -182,12 +182,12 @@ public class NhapThongTinPhong extends javax.swing.JFrame {
                 txtSoTangActionPerformed(evt);
             }
         });
-        getContentPane().add(txtSoTang, new org.netbeans.lib.awtextra.AbsoluteConstraints(215, 100, 240, 33));
+        getContentPane().add(txtSoTang, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 120, 240, 33));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 51, 51));
         jLabel4.setText("Số tầng: ");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(124, 104, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 130, -1, -1));
 
         txtLoaiPhong.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
@@ -199,12 +199,12 @@ public class NhapThongTinPhong extends javax.swing.JFrame {
                 txtLoaiPhongActionPerformed(evt);
             }
         });
-        getContentPane().add(txtLoaiPhong, new org.netbeans.lib.awtextra.AbsoluteConstraints(215, 164, 240, 33));
+        getContentPane().add(txtLoaiPhong, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 180, 240, 33));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(51, 0, 51));
         jLabel6.setText("Giá Phòng:");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(685, 104, -1, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 120, -1, -1));
 
         txtGiaPhong.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
@@ -216,7 +216,7 @@ public class NhapThongTinPhong extends javax.swing.JFrame {
                 txtGiaPhongActionPerformed(evt);
             }
         });
-        getContentPane().add(txtGiaPhong, new org.netbeans.lib.awtextra.AbsoluteConstraints(803, 100, 240, 33));
+        getContentPane().add(txtGiaPhong, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 120, 240, 33));
 
         ThemThongTin.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         ThemThongTin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testproject/view/icon/sign-add-icon.png"))); // NOI18N
@@ -310,16 +310,16 @@ public class NhapThongTinPhong extends javax.swing.JFrame {
                 txtTimKiemActionPerformed(evt);
             }
         });
-        getContentPane().add(txtTimKiem, new org.netbeans.lib.awtextra.AbsoluteConstraints(803, 163, 113, 33));
+        getContentPane().add(txtTimKiem, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 180, 113, 33));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(51, 0, 51));
         jLabel7.setText("Chức năng:");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(681, 169, -1, 20));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 190, -1, 20));
 
         boxSapXep.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         boxSapXep.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ma Phong", "Gia", "Tang", "Gia Tang", "Tang Gia" }));
-        getContentPane().add(boxSapXep, new org.netbeans.lib.awtextra.AbsoluteConstraints(925, 163, 113, 33));
+        getContentPane().add(boxSapXep, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 180, 113, 33));
 
         btnReSet.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testproject/view/icon/iconLamMoi.png"))); // NOI18N
         btnReSet.setText("Reset");
@@ -339,7 +339,7 @@ public class NhapThongTinPhong extends javax.swing.JFrame {
         });
         getContentPane().add(btnLuuFile, new org.netbeans.lib.awtextra.AbsoluteConstraints(1024, 253, -1, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testproject/view/icon/nen-gioithieu.jpg"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testproject/view/icon/background-don-gian-va-dep_110342896.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 1180, 270));
 
@@ -379,12 +379,29 @@ public class NhapThongTinPhong extends javax.swing.JFrame {
         if (choice == JOptionPane.NO_OPTION) {
             return;
         }
-        int soTang = Integer.parseInt(txtSoTang.getText());
-        double giaPhong = Double.parseDouble(txtGiaPhong.getText());
-        int loaiPhong = Integer.parseInt(txtLoaiPhong.getText());
-        int check = 0;
+         int check = 0;
         int selectedRow = tblPhong.getSelectedRow();
         String maPhong = (String) tblPhong.getValueAt(selectedRow, 0);
+      
+        int soTang =0;
+        int loaiPhong =0;
+        double giaPhong =0;
+        String trangThai = "Con Trong";
+        try {
+             soTang = Integer.parseInt(txtSoTang.getText());
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null,"Bạn đã nhập sai định dạng số tầng\n Xin vui lòng nhập sô ", "Thông bápo",JOptionPane.CANCEL_OPTION);
+        }
+        try {
+             loaiPhong =Integer.parseInt(txtLoaiPhong.getText());
+        } catch (Exception e) {
+             JOptionPane.showConfirmDialog(null,"Bạn đã nhập sai định dạng loại phòng\n Xin vui lòng nhập sô ", "Thông bápo",JOptionPane.CANCEL_OPTION);
+        }
+        try {
+            giaPhong= Double.parseDouble(txtGiaPhong.getText());
+        } catch (Exception e) {
+             JOptionPane.showConfirmDialog(null,"Bạn đã nhập sai định dạng loại phòng\n Xin vui lòng nhập sô tiền cụ thể ", "Thông bápo",JOptionPane.CANCEL_OPTION);
+        }
         for (Phong item : listPhong) {
             if (item.getMaPhong().equals(maPhong)) {
                 item.setSoTang(soTang);
@@ -395,15 +412,24 @@ public class NhapThongTinPhong extends javax.swing.JFrame {
             }
         }
         if (check == 1) {
-            file.delete();
+             if(soTang==0 || loaiPhong==0 || giaPhong==0){
+            System.out.println("lỗi");
+        }
+        else{
+              file.delete();
             docGhiFile.ghiFilePhong(listPhong);
             hienTHi(listPhong);
             resetForm();
             JOptionPane.showMessageDialog(rootPane, "Sửa thành công");
-        } else {
-            JOptionPane.showMessageDialog(rootPane,
-                    "Thông tin phòng không tồn tại", "Backup problem", JOptionPane.WARNING_MESSAGE);
         }
+          
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "Thông tin phòng không tồn tại", "Backup problem", JOptionPane.WARNING_MESSAGE);
+                
+        } 
+      
+         
+        
     }//GEN-LAST:event_ChinhSuaActionPerformed
 
     private void xoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_xoaActionPerformed
@@ -525,16 +551,40 @@ public class NhapThongTinPhong extends javax.swing.JFrame {
         }
 
         String maPhong = "MP" + id++;
-        int soTang = Integer.parseInt(txtSoTang.getText());
-        int loaiPhong = Integer.parseInt(txtLoaiPhong.getText());
-        double giaPhong = Double.parseDouble(txtGiaPhong.getText());
+        int soTang =0;
+        int loaiPhong =0;
+        double giaPhong =0;
         String trangThai = "Con Trong";
-        Phong phong = new Phong(maPhong, soTang, soTang, trangThai, giaPhong);
+        try {
+             soTang = Integer.parseInt(txtSoTang.getText());
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null,"Bạn đã nhập sai định dạng số tầng\n Xin vui lòng nhập sô ", "Thông bápo",JOptionPane.CANCEL_OPTION);
+        }
+        try {
+             loaiPhong =Integer.parseInt(txtLoaiPhong.getText());
+        } catch (Exception e) {
+             JOptionPane.showConfirmDialog(null,"Bạn đã nhập sai định dạng loại phòng\n Xin vui lòng nhập sô ", "Thông bápo",JOptionPane.CANCEL_OPTION);
+        }
+        try {
+            giaPhong= Double.parseDouble(txtGiaPhong.getText());
+        } catch (Exception e) {
+             JOptionPane.showConfirmDialog(null,"Bạn đã nhập sai định dạng loại phòng\n Xin vui lòng nhập sô tiền cụ thể ", "Thông bápo",JOptionPane.CANCEL_OPTION);
+        }
+        if(soTang==0 || loaiPhong==0 || giaPhong==0){
+            System.out.println("lỗi");
+        }
+        else{
+             Phong phong = new Phong(maPhong, soTang, soTang, trangThai, giaPhong);
         listPhong.add(phong);
         tableModel.addRow(new Object[]{maPhong, soTang, loaiPhong, trangThai, giaPhong});
         file.delete();
         docGhiFile.ghiFilePhong(listPhong);
         resetForm();
+        }
+        
+        
+        
+       
     }//GEN-LAST:event_ThemThongTinActionPerformed
  
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
@@ -598,7 +648,7 @@ public void close(){
     /**
      * @param args the command line arguments
      */
-    public static void main() {
+    public static void main(String[] args) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.

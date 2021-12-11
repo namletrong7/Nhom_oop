@@ -16,6 +16,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import sun.net.www.content.audio.x_aiff;
 import testproject.model.DocGhiFile;
 import testproject.model.HoComparator;
 import testproject.model.KhachHang;
@@ -196,7 +197,7 @@ public class NhapThongTinKhachHang extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(51, 51, 0));
         jLabel6.setText("Tuổi:");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(788, 125, -1, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 130, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(51, 51, 0));
@@ -234,7 +235,7 @@ public class NhapThongTinKhachHang extends javax.swing.JFrame {
                 txtTuoiActionPerformed(evt);
             }
         });
-        getContentPane().add(txtTuoi, new org.netbeans.lib.awtextra.AbsoluteConstraints(847, 114, 240, 33));
+        getContentPane().add(txtTuoi, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 120, 240, 33));
 
         tblKhachHang.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -389,7 +390,14 @@ public class NhapThongTinKhachHang extends javax.swing.JFrame {
     private void txtTimKiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTimKiemActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTimKiemActionPerformed
-
+    public boolean checkCMND(String text){
+        for(KhachHang x :listKH){
+            if(x.getCMND().equals(text)){
+                return false ;
+            }
+        }
+        return true ;
+    }
     private void btnChinhSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChinhSuaActionPerformed
         StringBuilder sb = new StringBuilder();
         if (txtHoTen.getText().equals("")) {
@@ -404,7 +412,14 @@ public class NhapThongTinKhachHang extends javax.swing.JFrame {
         if (txtTuoi.getText().equals("")) {
             sb.append("Tuổi không được để trống\n");
         }
-        if (sb.length() > 0) {
+          if(txtSDT.getText().length()<10){
+              sb.append("sdt phải lớn hơn 10 số\n");
+        }
+        if(txtCMND.getText().length()<12 ||txtCMND.getText().length()>12 ){
+            sb.append("chứng minh nhân dân hay thẻ căn cước phải số đủ 12 số");
+        }
+        
+         if (sb.length() > 0) {
             JOptionPane.showMessageDialog(rootPane,
                     sb.toString(), "Backup problem", JOptionPane.WARNING_MESSAGE);
             return;
@@ -413,13 +428,33 @@ public class NhapThongTinKhachHang extends javax.swing.JFrame {
         if (choice == JOptionPane.NO_OPTION) {
             return;
         }
-
+        String maKhachHang = "KH" + id++;
         String HotenKhachHang = txtHoTen.getText();
-        int tuoi = Integer.parseInt(txtTuoi.getText());
-        String scmnd = txtCMND.getText();
-        String sdt = txtSDT.getText();
         String phuongTTT = boxPhuongThuThanhToan.getSelectedItem().toString();
-        int check = 0;
+        String scmnd=null, sdt = null ;
+        int tuoi =0 ;
+           try {
+             scmnd = "0"+Long.parseLong(txtCMND.getText());
+         //     Long.parseLong(txtCMND.getText());
+        } catch (NumberFormatException e) {
+           
+         
+           JOptionPane.showConfirmDialog(null,"Số chứng minh thư hoặc thẻ căn cước đã bị nhập sai định dạng\n xin vui lòng nhập sô","thông báo",JOptionPane.CLOSED_OPTION);
+        }
+        try {
+            tuoi= Integer.parseInt(txtTuoi.getText());
+        } catch (Exception e) {
+             JOptionPane.showConfirmDialog(null,"Tuổi đã bị nhập sai định dạng\n xin vui lòng nhập sô","thông báo",JOptionPane.CLOSED_OPTION);
+            
+        }
+      
+        try {
+            sdt =  "0"+ Long.parseLong(txtSDT.getText());
+           } catch (Exception e) {
+          JOptionPane.showConfirmDialog(null,"Số điện thoại đã bị nhập sai định dạng\n xin vui lòng nhập sô","thông báo",JOptionPane.CLOSED_OPTION);
+        }
+        
+       int check = 0;
         int selectedRow = tblKhachHang.getSelectedRow();
         String maKH = (String) tblKhachHang.getValueAt(selectedRow, 0);
         for (KhachHang item : listKH) {
@@ -434,17 +469,31 @@ public class NhapThongTinKhachHang extends javax.swing.JFrame {
             }
 
         }
+        
         if (check == 1) {
-            f.delete();
-            docGhiFile.ghiFileKhachHang(listKH);
-            hienThi(listKH);
-            resetForm();
-            JOptionPane.showMessageDialog(rootPane, "Sửa thành công");
+            if (scmnd == null || sdt == null || tuoi == 0) {
+                System.out.println("Loi");
+            } else {
+                if (tuoi >= 14) {
+                    if (checkCMND(scmnd)) {
+                        f.delete();
+                        docGhiFile.ghiFileKhachHang(listKH);
+                        hienThi(listKH);
+                        resetForm();
+                        JOptionPane.showMessageDialog(rootPane, "Sửa thành công");
+                    } else {
+                        JOptionPane.showConfirmDialog(null, "Số chứng minh nhân dân hay thẻ căn cước bị trùng\n xin vui lòng check lại thông  tin", "thông báo", JOptionPane.CLOSED_OPTION);
+                    }
+                } else {
+                    JOptionPane.showConfirmDialog(null, "Khách hàng Chưa đủ tuôi\n Khách hàng phải lớn hơn 14 tuổi", "thông báo", JOptionPane.CLOSED_OPTION);
+                }
+            }
         } else {
             JOptionPane.showMessageDialog(rootPane,
                     "Thông tin Khách hàng không tồn tại", "Backup problem", JOptionPane.WARNING_MESSAGE);
 
         }
+
 
     }//GEN-LAST:event_btnChinhSuaActionPerformed
 // thêm thoogn tin 
@@ -462,11 +511,19 @@ public class NhapThongTinKhachHang extends javax.swing.JFrame {
         if (txtTuoi.getText().equals("")) {
             sb.append("Tuổi không được để trống\n");
         }
+        if (txtSDT.getText().length() < 10) {
+            sb.append("sdt phải lớn hơn 10 số\n");
+        }
+        if (txtCMND.getText().length() < 12 || txtCMND.getText().length() > 12) {
+            sb.append("chứng minh nhân dân hay thẻ căn cước phải số đủ 12 số");
+        }
+
         if (sb.length() > 0) {
             JOptionPane.showMessageDialog(rootPane,
                     sb.toString(), "Backup problem", JOptionPane.WARNING_MESSAGE);
             return;
         }
+
         //kiểm tra sau khi xóa 
         int max = 0;
         for (KhachHang item : listKH) {
@@ -476,24 +533,57 @@ public class NhapThongTinKhachHang extends javax.swing.JFrame {
             }
         }
         String maKhachHang = "KH" + id++;
-        System.out.println(maKhachHang);
         String HotenKhachHang = txtHoTen.getText();
-        int tuoi = Integer.parseInt(txtTuoi.getText());
-        String scmnd = txtCMND.getText();
-        String sdt = txtSDT.getText();
         String phuongTTT = boxPhuongThuThanhToan.getSelectedItem().toString();
-        KhachHang kh = new KhachHang(maKhachHang, HotenKhachHang, scmnd, sdt, tuoi, phuongTTT);
-        listKH.add(kh);
-        tableModel.addRow(new Object[]{maKhachHang, HotenKhachHang, scmnd, sdt, tuoi, phuongTTT});
-        f.delete();
-        docGhiFile.ghiFileKhachHang(listKH);
-        resetForm();
+        String scmnd = null, sdt = null;
+        int tuoi = 0;
+        try {
+            scmnd = "0" + Long.parseLong(txtCMND.getText());
+            //     Long.parseLong(txtCMND.getText());
+        } catch (NumberFormatException e) {
+
+            JOptionPane.showConfirmDialog(null, "Số chứng minh thư hoặc thẻ căn cước đã bị nhập sai định dạng\n xin vui lòng nhập sô", "thông báo", JOptionPane.CLOSED_OPTION);
+        }
+        try {
+            tuoi = Integer.parseInt(txtTuoi.getText());
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, "Tuổi đã bị nhập sai định dạng\n xin vui lòng nhập sô", "thông báo", JOptionPane.CLOSED_OPTION);
+
+        }
+
+        try {
+            sdt = "0" + Long.parseLong(txtSDT.getText());
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, "Số điện thoại đã bị nhập sai định dạng\n xin vui lòng nhập sô", "thông báo", JOptionPane.CLOSED_OPTION);
+        }
+
+        if (scmnd == null || sdt == null || tuoi == 0) {
+            System.out.println("Loi");
+        } else {
+            if (tuoi >= 14) {
+                if (checkCMND(scmnd)) {
+                    KhachHang kh = new KhachHang(maKhachHang, HotenKhachHang, scmnd, sdt, tuoi, phuongTTT);
+                    listKH.add(kh);
+                    tableModel.addRow(new Object[]{maKhachHang, HotenKhachHang, scmnd, sdt, tuoi, phuongTTT});
+                    f.delete();
+                    docGhiFile.ghiFileKhachHang(listKH);
+                    resetForm();
+                } else {
+                    JOptionPane.showConfirmDialog(null, "Số chứng minh nhân dân hay thẻ căn cước bị trùng\n xin vui lòng check lại thông  tin", "thông báo", JOptionPane.CLOSED_OPTION);
+                }
+
+            } else {
+                JOptionPane.showConfirmDialog(null, "Khách hàng Chưa đủ tuôi\n Khách hàng phải lớn hơn 14 tuổi", "thông báo", JOptionPane.CLOSED_OPTION);
+            }
+        }
+
+
     }//GEN-LAST:event_btnThemThongTinActionPerformed
-  
+
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-        
+
     }//GEN-LAST:event_formWindowClosing
- 
+
     private void txtHoTenFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtHoTenFocusLost
 
     }//GEN-LAST:event_txtHoTenFocusLost
@@ -624,7 +714,7 @@ public void close(){
     /**
      * @param args the command line arguments
      */
-    public static void main() {
+    public static void main(String[] args) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
