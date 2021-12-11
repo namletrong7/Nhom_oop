@@ -398,6 +398,28 @@ public class NhapThongTinKhachHang extends javax.swing.JFrame {
         }
         return true ;
     }
+    public boolean checkTenKH(String text){
+       String specialCharacters="!#$%&'()*+,-./:;<=>?@[]^_`{|}~0123456789";
+       int dem =0 ;
+       String str[] = text.split(" ");
+      
+       for(int i= 0 ;i<str.length;i++){
+           if(specialCharacters.contains(str[i])){
+                dem++ ; 
+           }
+         
+       }
+       if(dem==0){
+           return true ;
+       }
+       else{
+           JOptionPane.showConfirmDialog(null,"Tên khách hàng có chứa ký tự đặc biệt\nXin vui lòng nhập lại thông tin","thông báo",JOptionPane.CLOSED_OPTION);
+           return false ;
+             
+       }
+       
+   
+    }
     private void btnChinhSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChinhSuaActionPerformed
         StringBuilder sb = new StringBuilder();
         if (txtHoTen.getText().equals("")) {
@@ -475,7 +497,7 @@ public class NhapThongTinKhachHang extends javax.swing.JFrame {
                 System.out.println("Loi");
             } else {
                 if (tuoi >= 14) {
-                    if (checkCMND(scmnd)) {
+                    if (checkCMND(scmnd)|| checkTenKH(HotenKhachHang)) {
                         f.delete();
                         docGhiFile.ghiFileKhachHang(listKH);
                         hienThi(listKH);
@@ -561,7 +583,7 @@ public class NhapThongTinKhachHang extends javax.swing.JFrame {
             System.out.println("Loi");
         } else {
             if (tuoi >= 14) {
-                if (checkCMND(scmnd)) {
+                if (checkCMND(scmnd)||checkTenKH(HotenKhachHang)) {
                     KhachHang kh = new KhachHang(maKhachHang, HotenKhachHang, scmnd, sdt, tuoi, phuongTTT);
                     listKH.add(kh);
                     tableModel.addRow(new Object[]{maKhachHang, HotenKhachHang, scmnd, sdt, tuoi, phuongTTT});

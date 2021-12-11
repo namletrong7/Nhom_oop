@@ -416,11 +416,12 @@ public class NhapThongTinPhong extends javax.swing.JFrame {
             System.out.println("lỗi");
         }
         else{
-              file.delete();
-            docGhiFile.ghiFilePhong(listPhong);
-            hienTHi(listPhong);
-            resetForm();
-            JOptionPane.showMessageDialog(rootPane, "Sửa thành công");
+             Phong phong = new Phong(maPhong, soTang, soTang, trangThai, giaPhong);
+        listPhong.add(phong);
+        tableModel.addRow(new Object[]{maPhong, soTang, loaiPhong, trangThai, giaPhong});
+        file.delete();
+        docGhiFile.ghiFilePhong(listPhong);
+        resetForm();
         }
           
         } else {
