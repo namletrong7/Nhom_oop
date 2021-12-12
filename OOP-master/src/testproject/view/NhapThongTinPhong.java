@@ -432,7 +432,16 @@ public class NhapThongTinPhong extends javax.swing.JFrame {
          
         
     }//GEN-LAST:event_ChinhSuaActionPerformed
-
+ private boolean checkPhong(){
+     for(Phong xPhong: listPhong){
+         if(xPhong.getTrangThai().equals("Da dat")){
+             
+             return false;
+            
+         }
+     }
+     return true ;
+ }
     private void xoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_xoaActionPerformed
        
         int selectedRow = tblPhong.getSelectedRow();
@@ -443,13 +452,14 @@ public class NhapThongTinPhong extends javax.swing.JFrame {
         }
         int check = 0;
         for (int i = 0; i < listPhong.size(); i++) {
-            if (listPhong.get(i).getMaPhong().equals(maPhong)) {
+            if (listPhong.get(i).getMaPhong().equals(maPhong) && listPhong.get(i).getTrangThai().equals("Con Trong")) {
                 listPhong.remove(listPhong.get(i));
                 check = 1;
                 break;
             }
         }
-        if (check == 1) {
+        
+             if (check == 1 ) {
             file.delete();
             docGhiFile.ghiFilePhong(listPhong);
             hienTHi(listPhong);
@@ -457,8 +467,10 @@ public class NhapThongTinPhong extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane, "Xóa thành công");
         } else {
             JOptionPane.showMessageDialog(rootPane,
-                    "Thông tin phòng không tồn tại", "Backup problem", JOptionPane.WARNING_MESSAGE);
+                    "Phòng này đã được đặt xin vui lòng xóa phòng Còn trống\nXin cảm ơn", "Backup problem", JOptionPane.WARNING_MESSAGE);
         }
+      
+       
     }//GEN-LAST:event_xoaActionPerformed
 
     private void btnLocThongTinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocThongTinActionPerformed
