@@ -13,7 +13,9 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 //import java.text.ParseException;
 import java.util.ArrayList;
+import java.time.LocalTime;
 import java.util.Collections;
+import java.util.Calendar;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
@@ -39,18 +41,19 @@ public class DatPhongView extends javax.swing.JFrame {
     DefaultTableModel tableModel;
     int id = 0;
 
-    List<DatPhong> listDP = new ArrayList<>();
-    List<Phong> listP = new ArrayList<>();
-     List<KhachHang> listKH= new ArrayList<>();
+    private List<DatPhong> listDP = new ArrayList<>();
+    private List<Phong> listP = new ArrayList<>();
+    private List<KhachHang> listKH = new ArrayList<>();
     DocGhiFile docGhiFile = new DocGhiFile();
     private static final String curentDir = System.getProperty("user.dir");
     private static final String separator = File.separator;
     private static final String PATH_FILE_CSV_DatPhong = curentDir + separator + "data" + separator + "DatPhong.csv";
     private static final String PATH_FILE_CSV_PHONG = curentDir + separator + "data" + separator + "Phong.csv";
-    public static File fileDP = new File(PATH_FILE_CSV_DatPhong);
-    public static File fileP = new File(PATH_FILE_CSV_PHONG);
+    private static File fileDP = new File(PATH_FILE_CSV_DatPhong);
+    private static File fileP = new File(PATH_FILE_CSV_PHONG);
     private static final String PATH_FILE_CSV_KhachHang = curentDir + separator + "data" + separator + "KhachHang.csv";
-    public static File fileKH = new File(PATH_FILE_CSV_KhachHang);
+    private static File fileKH = new File(PATH_FILE_CSV_KhachHang);
+    private SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
 
     public DatPhongView() {
         this.dispose();
@@ -62,17 +65,16 @@ public class DatPhongView extends javax.swing.JFrame {
 
         if (fileDP.exists()) {
             try {
-               listDP = docGhiFile.docFileDatPhong();
-                if( listDP.size() == 0){
-                 fileDP.delete();
+                listDP = docGhiFile.docFileDatPhong();
+                if (listDP.size() == 0) {
+                    fileDP.delete();
                     DatPhongView dp = new DatPhongView();
                     dp.setVisible(true);
-                }
-                else{
-                    String ma =  listDP.get(  listDP.size() - 1).getMaDatPhong();
+                } else {
+                    String ma = listDP.get(listDP.size() - 1).getMaDatPhong();
                     id = Integer.parseInt(ma.substring(2)) + 1;
-                   hienTHi(listDP);
-                }      
+                    hienTHi(listDP);
+                }
             } catch (CsvValidationException ex) {
                 Logger.getLogger(DatPhongView.class.getName()).log(Level.SEVERE, null, ex);
             } catch (ParseException ex) {
@@ -97,7 +99,7 @@ public class DatPhongView extends javax.swing.JFrame {
 
     public void hienTHi(List<DatPhong> DatPhong) {
         tableModel.setRowCount(0);
-        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+
         for (DatPhong item : DatPhong) {
             String maDatPhong = item.getMaDatPhong();
             String maPhong = item.getMaPhong();
@@ -120,7 +122,9 @@ public class DatPhongView extends javax.swing.JFrame {
     public void reset() {
         txtMaPhong.setText("");
         txtMaKhachHang.setText("");
-
+        Date date = java.util.Calendar.getInstance().getTime();
+        txtNgayDat.setDate(date);
+        txtNgayTra.setDate(date);
     }
 
     /**
@@ -202,36 +206,36 @@ public class DatPhongView extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(51, 0, 51));
         jLabel3.setText("Mã Phòng: ");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 117, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 110, -1, -1));
 
         txtMaPhong.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtMaPhongActionPerformed(evt);
             }
         });
-        getContentPane().add(txtMaPhong, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 113, 240, 33));
+        getContentPane().add(txtMaPhong, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 110, 240, 33));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 51, 51));
         jLabel4.setText("Mã Khách Hàng: ");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, -1, -1));
 
         txtMaKhachHang.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtMaKhachHangActionPerformed(evt);
             }
         });
-        getContentPane().add(txtMaKhachHang, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 212, 240, 33));
+        getContentPane().add(txtMaKhachHang, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 210, 240, 33));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(51, 0, 0));
         jLabel5.setText("Ngày đặt:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 110, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 110, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(51, 51, 0));
         jLabel6.setText("Ngày trả:");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 170, -1, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 170, -1, -1));
 
         btnDatPhong.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnDatPhong.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testproject/view/icon/sign-add-icon.png"))); // NOI18N
@@ -288,12 +292,12 @@ public class DatPhongView extends javax.swing.JFrame {
                 txtFindActionPerformed(evt);
             }
         });
-        getContentPane().add(txtFind, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 221, 240, 32));
+        getContentPane().add(txtFind, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 220, 220, 32));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(51, 0, 0));
         jLabel7.setText("Tìm kiếm: ");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 230, -1, -1));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 230, -1, -1));
 
         tblDatPhong.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -326,7 +330,7 @@ public class DatPhongView extends javax.swing.JFrame {
             tblDatPhong.getColumnModel().getColumn(2).setMaxWidth(50);
         }
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 398, 1230, 380));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, 1230, 380));
 
         btnReset.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnReset.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testproject/view/icon/iconLamMoi.png"))); // NOI18N
@@ -346,11 +350,11 @@ public class DatPhongView extends javax.swing.JFrame {
         });
         getContentPane().add(txtSort, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 270, -1, 31));
 
-        txtNgayDat.setDateFormatString("dd-MM-yyyy");
-        getContentPane().add(txtNgayDat, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 113, -1, -1));
+        txtNgayDat.setDateFormatString("dd-MM-yyyy HH:mm:ss");
+        getContentPane().add(txtNgayDat, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 96, -1, 40));
 
-        txtNgayTra.setDateFormatString("dd-MM-yyyy");
-        getContentPane().add(txtNgayTra, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 170, -1, -1));
+        txtNgayTra.setDateFormatString("dd-MM-yyyy HH:mm:ss");
+        getContentPane().add(txtNgayTra, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 156, -1, 40));
 
         btnThanhToan.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnThanhToan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testproject/view/icon/icons8-cash-in-hand-96.png"))); // NOI18N
@@ -408,11 +412,11 @@ public class DatPhongView extends javax.swing.JFrame {
             }
             String maPhong = (String) tblDatPhong.getValueAt(selectedRow, 1);
             for (Phong item : listP) {
-            if (item.getMaPhong().equals(maPhong)) {
-                item.setTrangThai("Con Trong");
-                break;
-            } 
-        }
+                if (item.getMaPhong().equals(maPhong)) {
+                    item.setTrangThai("Con Trong");
+                    break;
+                }
+            }
             fileP.delete();
             docGhiFile.ghiFilePhong(listP);
             fileDP.delete();
@@ -494,20 +498,98 @@ public class DatPhongView extends javax.swing.JFrame {
         }
         // TODO add your handling code here:
     }//GEN-LAST:event_btnFindingActionPerformed
+    public boolean checkMaKH(String text) {
+        for (KhachHang x : listKH) {
+            if (x.getMaKhachHang().equalsIgnoreCase(text)) {
+                return true;
+            }
+        }
+        return false;
+    }
 
+    public boolean kiemTraMaKhachHang() {
+        boolean flag = false;
+        for (KhachHang item : listKH) {
+            if (item.getMaKhachHang().equals(txtMaKhachHang.getText())) {
+                flag = true;
+                System.out.println(item.getMaKhachHang());
+            }
+        }
+        if (flag == false) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    public double tinhTongTien(double thoiGian, double giaPhong) {
+        double tongTien = 0;
+        if (thoiGian < 24) {
+            System.out.println("a");
+            System.out.println(tongTien);
+            if (thoiGian > 0 && thoiGian <= 2) {
+                tongTien = giaPhong * 15 / 100;
+            } else if (thoiGian > 2 && thoiGian <= 5) {
+                tongTien = giaPhong * 25 / 100;
+            } else if (thoiGian > 5) {
+                tongTien = giaPhong * thoiGian * 10 / 100;
+            }
+        } else if (thoiGian >= 24) {
+            System.out.println(tongTien);
+            System.out.println("b");
+            int a = (int) (thoiGian / 24);
+            double b = thoiGian - (double) 24 * a;
+            System.out.println(a);
+            if (b > 0 && b <= 2) {
+                tongTien = giaPhong * 15 / 100 + giaPhong * a;
+            } else if (b > 2 && b <= 5) {
+                tongTien = giaPhong * 25 / 100 + giaPhong * a;
+            } else if (b > 5) {
+                tongTien = giaPhong * 10 / 100 * b + giaPhong * a;
+            } else if (b == 0) {
+                tongTien = giaPhong * a;
+            }
+        }
+        return tongTien;
+    }
     private void btnDatPhongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDatPhongActionPerformed
+        StringBuilder sb = new StringBuilder();
+        if (txtMaKhachHang.getText().equals("")) {
+            sb.append("Mã khách hàng không được để trống\n");
+        }
+        if (txtMaPhong.getText().equals("")) {
+            sb.append("Mã phòng không được để trống\n");
+        }
+        if (sb.length() > 0) {
+            JOptionPane.showMessageDialog(rootPane,
+                    sb.toString(), "Backup problem", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        if (kiemTraMaKhachHang() == false) {
+            JOptionPane.showMessageDialog(rootPane,
+                    "Thông tin Khách hàng không tồn tại!!! Hãy nhập thông tin khách hàng ở bên thông tin khách hàng", "Backup problem", JOptionPane.WARNING_MESSAGE);
+            txtMaKhachHang.requestFocus();
+            return;
+        }
+
         String maPhong = txtMaPhong.getText();
         boolean flag = false;
-        
+        String maKhachHang = txtMaKhachHang.getText();
         for (Phong item : listP) {
             if (item.getMaPhong().equals(maPhong) && item.getTrangThai().equals("Con Trong")) {
                 Date ngayDat = txtNgayDat.getDate();
                 Date ngayTra = txtNgayTra.getDate();
+                System.out.println("ngay dat" + ngayDat);
+                System.out.println("ngay dat" + ngayTra);
                 String maDatPhong = "DP" + id++;
-                String maKhachHang = txtMaKhachHang.getText();
                 item.setTrangThai("Da dat");
                 double giaPhong = item.getGiaPhong();
-                Double TongTien = ThanhToan(ngayDat, ngayTra, giaPhong);
+                long a = (ngayTra.getTime()) - (ngayDat.getTime());
+                double phut = a / (60 * 1000) % 60;
+                double gio = a / (60 * 60 * 1000);
+                double thoiGian = phut / 60 + gio;
+                System.out.println(thoiGian);
+                Double TongTien = tinhTongTien(thoiGian, giaPhong);
                 DatPhong dp = new DatPhong(maDatPhong, maPhong, maKhachHang, ngayDat, ngayTra, TongTien);
                 listDP.add(dp);
                 tableModel.addRow(new Object[]{maDatPhong, maPhong, maKhachHang, ngayDat, ngayTra, TongTien});
@@ -516,14 +598,15 @@ public class DatPhongView extends javax.swing.JFrame {
                 fileP.delete();
                 docGhiFile.ghiFilePhong(listP);
                 hienTHi(listDP);
-                reset();
                 flag = true;
+                reset();
                 break;
-            } 
+
+            }
         }
         if (flag == false) {
-                JOptionPane.showMessageDialog(rootPane, "Mã Phòng không hợp lệ hoặc đã được đặt");
-            }
+            JOptionPane.showMessageDialog(rootPane, "Mã phòng không tồn tại hoặc đã được đặt \n xin vui lòng check lại thông tin");
+        }
 
 //        Xử lý set trạng thái phòng tương ứng với mã phòng
 
@@ -550,8 +633,9 @@ public class DatPhongView extends javax.swing.JFrame {
     }//GEN-LAST:event_tblDatPhongMouseClicked
 
     private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
-     txtMaKhachHang.setText("");
-     txtMaPhong.setText("");
+        txtMaKhachHang.setText("");
+        txtMaPhong.setText("");
+        txtFind.setText("");
     }//GEN-LAST:event_btnResetActionPerformed
 
     private void txtSortActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSortActionPerformed
@@ -565,7 +649,7 @@ public class DatPhongView extends javax.swing.JFrame {
             String maPhong = (String) tblDatPhong.getValueAt(selectedRow, 1);
             for (DatPhong item : listDP) {
                 if (maDatPhong.equals(item.getMaDatPhong())) {
-                   listDP.remove(item);
+                    listDP.remove(item);
                     JOptionPane.showConfirmDialog(null, "Đã thanh toán thành công\nXin cảm ơn", "Thông báo", JOptionPane.CLOSED_OPTION);
                     for (Phong item1 : listP) {
                         if (item1.getMaPhong().equals(maPhong)) {
@@ -575,8 +659,8 @@ public class DatPhongView extends javax.swing.JFrame {
                     break;
                 }
             }
-           fileP.delete();
-           docGhiFile.ghiFilePhong(listP);
+            fileP.delete();
+            docGhiFile.ghiFilePhong(listP);
             fileDP.delete();
             docGhiFile.ghiFileDatPhong(listDP);
             hienTHi(listDP);
@@ -586,13 +670,14 @@ public class DatPhongView extends javax.swing.JFrame {
 
     private void btnQuayLaijActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuayLaijActionPerformed
         // TODO  close()add your handling code here:
-         close();
-           new Menu().setVisible(true);
+        close();
+        new Menu().setVisible(true);
     }//GEN-LAST:event_btnQuayLaijActionPerformed
-public void close(){
-       WindowEvent closeWindow= new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
-       Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(closeWindow);
-   }
+    public void close() {
+        WindowEvent closeWindow = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
+        Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(closeWindow);
+    }
+
     /**
      * @param args the command line arguments
      */

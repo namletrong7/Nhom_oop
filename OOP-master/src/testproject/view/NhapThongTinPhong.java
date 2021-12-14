@@ -120,7 +120,6 @@ public class NhapThongTinPhong extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         boxSapXep = new javax.swing.JComboBox<>();
         btnReSet = new javax.swing.JButton();
-        btnLuuFile = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -226,7 +225,7 @@ public class NhapThongTinPhong extends javax.swing.JFrame {
                 ThemThongTinActionPerformed(evt);
             }
         });
-        getContentPane().add(ThemThongTin, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 252, -1, -1));
+        getContentPane().add(ThemThongTin, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 250, -1, -1));
 
         ChinhSua.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         ChinhSua.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testproject/view/icon/icons8-pencil-48.png"))); // NOI18N
@@ -236,7 +235,7 @@ public class NhapThongTinPhong extends javax.swing.JFrame {
                 ChinhSuaActionPerformed(evt);
             }
         });
-        getContentPane().add(ChinhSua, new org.netbeans.lib.awtextra.AbsoluteConstraints(235, 252, -1, -1));
+        getContentPane().add(ChinhSua, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 250, -1, -1));
 
         xoa.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         xoa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testproject/view/icon/icons8-trash-48.png"))); // NOI18N
@@ -246,7 +245,7 @@ public class NhapThongTinPhong extends javax.swing.JFrame {
                 xoaActionPerformed(evt);
             }
         });
-        getContentPane().add(xoa, new org.netbeans.lib.awtextra.AbsoluteConstraints(422, 252, -1, -1));
+        getContentPane().add(xoa, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 250, -1, -1));
 
         btnLocThongTin.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnLocThongTin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testproject/view/icon/icon-sapxep.png"))); // NOI18N
@@ -256,7 +255,7 @@ public class NhapThongTinPhong extends javax.swing.JFrame {
                 btnLocThongTinActionPerformed(evt);
             }
         });
-        getContentPane().add(btnLocThongTin, new org.netbeans.lib.awtextra.AbsoluteConstraints(857, 252, -1, -1));
+        getContentPane().add(btnLocThongTin, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 250, -1, -1));
 
         tblPhong.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -297,7 +296,7 @@ public class NhapThongTinPhong extends javax.swing.JFrame {
                 btnTimKiemActionPerformed(evt);
             }
         });
-        getContentPane().add(btnTimKiem, new org.netbeans.lib.awtextra.AbsoluteConstraints(557, 252, -1, -1));
+        getContentPane().add(btnTimKiem, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 250, -1, -1));
 
         txtTimKiem.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         txtTimKiem.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -328,16 +327,7 @@ public class NhapThongTinPhong extends javax.swing.JFrame {
                 btnReSetActionPerformed(evt);
             }
         });
-        getContentPane().add(btnReSet, new org.netbeans.lib.awtextra.AbsoluteConstraints(724, 253, -1, -1));
-
-        btnLuuFile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testproject/view/icon/icons8-save-as-48.png"))); // NOI18N
-        btnLuuFile.setText("Lưu File");
-        btnLuuFile.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLuuFileActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnLuuFile, new org.netbeans.lib.awtextra.AbsoluteConstraints(1024, 253, -1, -1));
+        getContentPane().add(btnReSet, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 250, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testproject/view/icon/background-don-gian-va-dep_110342896.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
@@ -374,7 +364,7 @@ public class NhapThongTinPhong extends javax.swing.JFrame {
                     sb.toString(), "Backup problem", JOptionPane.WARNING_MESSAGE);
             return;
         }
-
+       
         int choice = JOptionPane.showConfirmDialog(rootPane, "Bạn có muốn chỉnh sửa thông tin không?", "Hỏi", JOptionPane.YES_NO_OPTION);
         if (choice == JOptionPane.NO_OPTION) {
             return;
@@ -396,11 +386,12 @@ public class NhapThongTinPhong extends javax.swing.JFrame {
              loaiPhong =Integer.parseInt(txtLoaiPhong.getText());
         } catch (Exception e) {
              JOptionPane.showConfirmDialog(null,"Bạn đã nhập sai định dạng loại phòng\n Xin vui lòng nhập sô ", "Thông bápo",JOptionPane.CANCEL_OPTION);
+          
         }
         try {
             giaPhong= Double.parseDouble(txtGiaPhong.getText());
         } catch (Exception e) {
-             JOptionPane.showConfirmDialog(null,"Bạn đã nhập sai định dạng loại phòng\n Xin vui lòng nhập sô tiền cụ thể ", "Thông bápo",JOptionPane.CANCEL_OPTION);
+             JOptionPane.showConfirmDialog(null,"Bạn đã nhập sai định dạng giá phòng\n Xin vui lòng nhập sô tiền cụ thể ", "Thông bápo",JOptionPane.CANCEL_OPTION);
         }
         for (Phong item : listPhong) {
             if (item.getMaPhong().equals(maPhong)) {
@@ -414,14 +405,19 @@ public class NhapThongTinPhong extends javax.swing.JFrame {
         if (check == 1) {
              if(soTang==0 || loaiPhong==0 || giaPhong==0){
             System.out.println("lỗi");
+        }  else if(soTang>50 || soTang <0){
+         JOptionPane.showConfirmDialog(null,"Khách sạn chỉ tối đa 50 tầng\nHãy nhập tầng khác bé hơn 50 và lớn hơn 0 ", "Thông báo",JOptionPane.CANCEL_OPTION);    
         }
-        else{
-             Phong phong = new Phong(maPhong, soTang, soTang, trangThai, giaPhong);
-        listPhong.add(phong);
-        tableModel.addRow(new Object[]{maPhong, soTang, loaiPhong, trangThai, giaPhong});
-        file.delete();
-        docGhiFile.ghiFilePhong(listPhong);
-        resetForm();
+        if(  loaiPhong >4 || loaiPhong <1){
+             JOptionPane.showConfirmDialog(null,"Xin thông báo chỉ có loại phòng\n 1 người\n2 người\n3 người \n4 người\n Hãy nhập loại phòng thích hợp ", "Thông báo",JOptionPane.CANCEL_OPTION); 
+        }
+        else {
+            
+              file.delete();
+            docGhiFile.ghiFilePhong(listPhong);
+            hienTHi(listPhong);
+            resetForm();
+            JOptionPane.showMessageDialog(rootPane, "Sửa thành công");
         }
           
         } else {
@@ -432,16 +428,16 @@ public class NhapThongTinPhong extends javax.swing.JFrame {
          
         
     }//GEN-LAST:event_ChinhSuaActionPerformed
- private boolean checkPhong(){
-     for(Phong xPhong: listPhong){
-         if(xPhong.getTrangThai().equals("Da dat")){
-             
-             return false;
-            
-         }
-     }
-     return true ;
- }
+ public boolean checkTrangThai(){
+        for(Phong x: listPhong){
+            if(x.getTrangThai().equalsIgnoreCase("Da dat")){
+               //  JOptionPane.showConfirmDialog(null,"Phòng này đã được đặt nên không  xóa được\nHãy check lại thông tin", "Thông bápo",JOptionPane.CANCEL_OPTION);
+                return false ;
+            }
+               
+        }
+        return true ;
+    }
     private void xoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_xoaActionPerformed
        
         int selectedRow = tblPhong.getSelectedRow();
@@ -452,14 +448,13 @@ public class NhapThongTinPhong extends javax.swing.JFrame {
         }
         int check = 0;
         for (int i = 0; i < listPhong.size(); i++) {
-            if (listPhong.get(i).getMaPhong().equals(maPhong) && listPhong.get(i).getTrangThai().equals("Con Trong")) {
+            if (listPhong.get(i).getMaPhong().equals(maPhong) && listPhong.get(i).getTrangThai().equalsIgnoreCase("Con Trong")) {
                 listPhong.remove(listPhong.get(i));
                 check = 1;
                 break;
             }
         }
-        
-             if (check == 1 ) {
+        if (check == 1) {
             file.delete();
             docGhiFile.ghiFilePhong(listPhong);
             hienTHi(listPhong);
@@ -467,10 +462,8 @@ public class NhapThongTinPhong extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane, "Xóa thành công");
         } else {
             JOptionPane.showMessageDialog(rootPane,
-                    "Phòng này đã được đặt xin vui lòng xóa phòng Còn trống\nXin cảm ơn", "Backup problem", JOptionPane.WARNING_MESSAGE);
+                    "Phòng này đã được khách đặt\nhãy check lại thông tin", "Backup problem", JOptionPane.WARNING_MESSAGE);
         }
-      
-       
     }//GEN-LAST:event_xoaActionPerformed
 
     private void btnLocThongTinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocThongTinActionPerformed
@@ -497,7 +490,8 @@ public class NhapThongTinPhong extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLocThongTinActionPerformed
 
     private void btnTimKiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTimKiemActionPerformed
-        boolean flag = false;
+        boolean flag1 = false;
+        boolean flag2 = false;
         tableModel.setRowCount(0);
         if (isNumeric(txtTimKiem.getText()) == false) {
             for (Phong item : listPhong) {
@@ -507,12 +501,13 @@ public class NhapThongTinPhong extends javax.swing.JFrame {
                 if (item.getTrangThai().equals(txtTimKiem.getText())) {
                     tableModel.addRow(new Object[]{item.getMaPhong(), item.getSoTang(), item.getLoaiPhong(), item.getTrangThai(), item.getGiaPhong()});
                 }
-                flag = true;
+                flag1 = true;
             }
-            if (flag == false) {
+             if (flag1 == false) {
                 JOptionPane.showMessageDialog(rootPane,
                         "Thông tin phòng không tồn tại", "Backup problem", JOptionPane.WARNING_MESSAGE);
             }
+           
         } else {
             for (Phong item : listPhong) {
                 if (item.getSoTang() == Integer.parseInt(txtTimKiem.getText())) {
@@ -522,9 +517,9 @@ public class NhapThongTinPhong extends javax.swing.JFrame {
                     tableModel.addRow(new Object[]{item.getMaPhong(), item.getSoTang(), item.getLoaiPhong(), item.getTrangThai(), item.getGiaPhong()});
                 }
 
-                flag = true;
+                flag2 = true;
             }
-            if (flag == false) {
+            if (flag2 == false) {
                 JOptionPane.showMessageDialog(rootPane,
                         "Thông tin phòng không tồn tại", "Backup problem", JOptionPane.WARNING_MESSAGE);
             }
@@ -540,7 +535,7 @@ public class NhapThongTinPhong extends javax.swing.JFrame {
 
         StringBuilder sb = new StringBuilder();
         if (txtGiaPhong.getText().equals("")) {
-            sb.append("Mã phòng không được để trống\n");
+            sb.append("Giá phòng không được để trống\n");
         }
         if (txtLoaiPhong.getText().equals("")) {
             sb.append("Loại phòng không được để trống\n");
@@ -581,12 +576,19 @@ public class NhapThongTinPhong extends javax.swing.JFrame {
         try {
             giaPhong= Double.parseDouble(txtGiaPhong.getText());
         } catch (Exception e) {
-             JOptionPane.showConfirmDialog(null,"Bạn đã nhập sai định dạng loại phòng\n Xin vui lòng nhập sô tiền cụ thể ", "Thông bápo",JOptionPane.CANCEL_OPTION);
+             JOptionPane.showConfirmDialog(null,"Bạn đã nhập sai định dạng giá phòng\n Xin vui lòng nhập sô tiền cụ thể ", "Thông bápo",JOptionPane.CANCEL_OPTION);
         }
         if(soTang==0 || loaiPhong==0 || giaPhong==0){
             System.out.println("lỗi");
         }
-        else{
+        else if(soTang>50 || soTang <0){
+         JOptionPane.showConfirmDialog(null,"Khách sạn chỉ tối đa 50 tầng\nHãy nhập tầng khác bé hơn 50 và lớn hơn 0 ", "Thông báo",JOptionPane.CANCEL_OPTION);    
+        }
+        if(  loaiPhong >4 || loaiPhong <1){
+             JOptionPane.showConfirmDialog(null,"Xin thông báo chỉ có loại phòng\n 1 người\n2 người\n3 người \n4 người\n Hãy nhập loại phòng thích hợp ", "Thông báo",JOptionPane.CANCEL_OPTION); 
+        }
+        else { 
+           
              Phong phong = new Phong(maPhong, soTang, soTang, trangThai, giaPhong);
         listPhong.add(phong);
         tableModel.addRow(new Object[]{maPhong, soTang, loaiPhong, trangThai, giaPhong});
@@ -599,7 +601,7 @@ public class NhapThongTinPhong extends javax.swing.JFrame {
         
        
     }//GEN-LAST:event_ThemThongTinActionPerformed
- 
+   
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
        
     }//GEN-LAST:event_formWindowClosing
@@ -644,16 +646,9 @@ close();
   txtGiaPhong.setText("");
   txtLoaiPhong.setText("");
   txtSoTang.setText("");
+  txtTimKiem.setText("");
         // TODO add your handling code here:
     }//GEN-LAST:event_btnReSetActionPerformed
-
-    private void btnLuuFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLuuFileActionPerformed
-        int choice = JOptionPane.showConfirmDialog(rootPane, "Bạn có muốn Lưu thông tin vào file không?", "Hỏi", JOptionPane.YES_NO_OPTION);
-        if (choice == JOptionPane.YES_OPTION) {
-            file.delete();
-            docGhiFile.ghiFilePhong(listPhong);
-        } // TODO add your handling code here:
-    }//GEN-LAST:event_btnLuuFileActionPerformed
 public void close(){
        WindowEvent closeWindow= new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
        Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(closeWindow);
@@ -698,7 +693,6 @@ public void close(){
     private javax.swing.JButton ThemThongTin;
     private javax.swing.JComboBox<String> boxSapXep;
     private javax.swing.JButton btnLocThongTin;
-    private javax.swing.JButton btnLuuFile;
     private javax.swing.JButton btnReSet;
     private javax.swing.JButton btnTimKiem;
     private javax.swing.JButton jButton3;

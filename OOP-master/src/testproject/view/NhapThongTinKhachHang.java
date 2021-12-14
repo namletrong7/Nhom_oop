@@ -129,7 +129,6 @@ public class NhapThongTinKhachHang extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         boxSapXep = new javax.swing.JComboBox<>();
         btnReSet = new javax.swing.JButton();
-        btnLuuFiile = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         jButton5.setText("jButton5");
@@ -280,7 +279,7 @@ public class NhapThongTinKhachHang extends javax.swing.JFrame {
                 btnThemThongTinActionPerformed(evt);
             }
         });
-        getContentPane().add(btnThemThongTin, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 303, -1, -1));
+        getContentPane().add(btnThemThongTin, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, -1, -1));
 
         btnChinhSua.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnChinhSua.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testproject/view/icon/icons8-pencil-48.png"))); // NOI18N
@@ -290,7 +289,7 @@ public class NhapThongTinKhachHang extends javax.swing.JFrame {
                 btnChinhSuaActionPerformed(evt);
             }
         });
-        getContentPane().add(btnChinhSua, new org.netbeans.lib.awtextra.AbsoluteConstraints(248, 303, -1, -1));
+        getContentPane().add(btnChinhSua, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 290, -1, -1));
 
         btnSapXep.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnSapXep.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testproject/view/icon/icon-sapxep.png"))); // NOI18N
@@ -300,7 +299,7 @@ public class NhapThongTinKhachHang extends javax.swing.JFrame {
                 btnSapXepActionPerformed(evt);
             }
         });
-        getContentPane().add(btnSapXep, new org.netbeans.lib.awtextra.AbsoluteConstraints(923, 303, -1, -1));
+        getContentPane().add(btnSapXep, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 290, -1, -1));
 
         btnXoa.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnXoa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testproject/view/icon/icons8-trash-48.png"))); // NOI18N
@@ -310,7 +309,7 @@ public class NhapThongTinKhachHang extends javax.swing.JFrame {
                 btnXoaActionPerformed(evt);
             }
         });
-        getContentPane().add(btnXoa, new org.netbeans.lib.awtextra.AbsoluteConstraints(443, 303, -1, -1));
+        getContentPane().add(btnXoa, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 290, -1, -1));
 
         boxPhuongThuThanhToan.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         boxPhuongThuThanhToan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tiền mặt", "Thẻ" }));
@@ -326,25 +325,25 @@ public class NhapThongTinKhachHang extends javax.swing.JFrame {
                 btnTimKiemActionPerformed(evt);
             }
         });
-        getContentPane().add(btnTimKiem, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 303, -1, -1));
+        getContentPane().add(btnTimKiem, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 290, -1, -1));
 
         txtTimKiem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtTimKiemActionPerformed(evt);
             }
         });
-        getContentPane().add(txtTimKiem, new org.netbeans.lib.awtextra.AbsoluteConstraints(816, 233, 89, 33));
+        getContentPane().add(txtTimKiem, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 220, 150, 33));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(51, 51, 0));
         jLabel8.setText("Chức năng:");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(704, 237, -1, -1));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 230, -1, -1));
 
         boxSapXep.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         boxSapXep.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tuoi", "Ho", "Ma KH" }));
         boxSapXep.setToolTipText("");
         boxSapXep.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        getContentPane().add(boxSapXep, new org.netbeans.lib.awtextra.AbsoluteConstraints(923, 232, 127, 33));
+        getContentPane().add(boxSapXep, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 220, 90, 33));
 
         btnReSet.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testproject/view/icon/iconLamMoi.png"))); // NOI18N
         btnReSet.setText("Reset");
@@ -353,16 +352,7 @@ public class NhapThongTinKhachHang extends javax.swing.JFrame {
                 btnReSetActionPerformed(evt);
             }
         });
-        getContentPane().add(btnReSet, new org.netbeans.lib.awtextra.AbsoluteConstraints(586, 304, -1, -1));
-
-        btnLuuFiile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testproject/view/icon/icons8-save-as-48.png"))); // NOI18N
-        btnLuuFiile.setText("Lưu File");
-        btnLuuFiile.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLuuFiileActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnLuuFiile, new org.netbeans.lib.awtextra.AbsoluteConstraints(1107, 304, -1, -1));
+        getContentPane().add(btnReSet, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 290, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testproject/view/icon/nen-gioithieu.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
@@ -398,27 +388,30 @@ public class NhapThongTinKhachHang extends javax.swing.JFrame {
         }
         return true ;
     }
-    public boolean checkTenKH(String text){
-       String specialCharacters="!#$%&'()*+,-./:;<=>?@[]^_`{|}~0123456789";
-       int dem =0 ;
-       String str[] = text.split(" ");
-      
-       for(int i= 0 ;i<str.length;i++){
-           if(specialCharacters.contains(str[i])){
-                dem++ ; 
-           }
-         
-       }
-       if(dem==0){
-           return true ;
-       }
-       else{
-           JOptionPane.showConfirmDialog(null,"Tên khách hàng có chứa ký tự đặc biệt\nXin vui lòng nhập lại thông tin","thông báo",JOptionPane.CLOSED_OPTION);
-           return false ;
-             
-       }
-       
-   
+    public  boolean checkTenKH(String text){
+        String specialCharacters = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~0123456789";
+           
+    String[] strlCharactersArray = new String[ text.length()];
+    for (int i = 0; i <  text.length(); i++) {
+         strlCharactersArray[i] = Character
+            .toString( text.charAt(i));
+    }
+    //now  strlCharactersArray[i]=[A, d, i, t, y, a]
+    int count = 0;
+    for (int i = 0; i <  strlCharactersArray.length; i++) {
+        if (specialCharacters.contains( strlCharactersArray[i])) {
+            count++;
+        }
+
+    }
+    if(count==0){
+       return true ;
+        
+    }
+    else{
+       return false ;
+    }
+
     }
     private void btnChinhSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChinhSuaActionPerformed
         StringBuilder sb = new StringBuilder();
@@ -440,12 +433,18 @@ public class NhapThongTinKhachHang extends javax.swing.JFrame {
         if(txtCMND.getText().length()<12 ||txtCMND.getText().length()>12 ){
             sb.append("chứng minh nhân dân hay thẻ căn cước phải số đủ 12 số");
         }
+        if(checkTenKH(txtHoTen.getText())==false){
+             
+      JOptionPane.showConfirmDialog(null,"Tên khách hàng chứa ký tự đặc biệt\nHãy nhớ tên chỉ chứa ký tự a-z A-Z và không chứa dấu","thông báo",JOptionPane.ERROR_MESSAGE);
+        return ;             
+     }
         
          if (sb.length() > 0) {
             JOptionPane.showMessageDialog(rootPane,
                     sb.toString(), "Backup problem", JOptionPane.WARNING_MESSAGE);
             return;
         }
+//        
         int choice = JOptionPane.showConfirmDialog(rootPane, "Bạn có muốn chỉnh sửa thông tin không?", "Hỏi", JOptionPane.YES_NO_OPTION);
         if (choice == JOptionPane.NO_OPTION) {
             return;
@@ -463,19 +462,19 @@ public class NhapThongTinKhachHang extends javax.swing.JFrame {
          
            JOptionPane.showConfirmDialog(null,"Số chứng minh thư hoặc thẻ căn cước đã bị nhập sai định dạng\n xin vui lòng nhập sô","thông báo",JOptionPane.CLOSED_OPTION);
         }
-        try {
-            tuoi= Integer.parseInt(txtTuoi.getText());
-        } catch (Exception e) {
-             JOptionPane.showConfirmDialog(null,"Tuổi đã bị nhập sai định dạng\n xin vui lòng nhập sô","thông báo",JOptionPane.CLOSED_OPTION);
-            
-        }
       
         try {
             sdt =  "0"+ Long.parseLong(txtSDT.getText());
            } catch (Exception e) {
           JOptionPane.showConfirmDialog(null,"Số điện thoại đã bị nhập sai định dạng\n xin vui lòng nhập sô","thông báo",JOptionPane.CLOSED_OPTION);
         }
-        
+          try {
+            tuoi= Integer.parseInt(txtTuoi.getText());
+        } catch (Exception e) {
+             JOptionPane.showConfirmDialog(null,"Tuổi đã bị nhập sai định dạng\n xin vui lòng nhập sô","thông báo",JOptionPane.CLOSED_OPTION);
+            
+        }
+      
        int check = 0;
         int selectedRow = tblKhachHang.getSelectedRow();
         String maKH = (String) tblKhachHang.getValueAt(selectedRow, 0);
@@ -497,15 +496,17 @@ public class NhapThongTinKhachHang extends javax.swing.JFrame {
                 System.out.println("Loi");
             } else {
                 if (tuoi >= 14) {
-                    if (checkCMND(scmnd)|| checkTenKH(HotenKhachHang)) {
-                        f.delete();
+//                    if(checkCMND(scmnd)){
+                     f.delete();
                         docGhiFile.ghiFileKhachHang(listKH);
                         hienThi(listKH);
                         resetForm();
-                        JOptionPane.showMessageDialog(rootPane, "Sửa thành công");
-                    } else {
-                        JOptionPane.showConfirmDialog(null, "Số chứng minh nhân dân hay thẻ căn cước bị trùng\n xin vui lòng check lại thông  tin", "thông báo", JOptionPane.CLOSED_OPTION);
-                    }
+                        JOptionPane.showMessageDialog(rootPane, "Sửa thành công");   
+ //                   }
+//                    else{
+//                   JOptionPane.showConfirmDialog(null, "Số chứng minh nhân dân hay thẻ căn cước bị trùng\n xin vui lòng check lại thông  tin", "thông báo", JOptionPane.CLOSED_OPTION);      
+//                    }
+                    
                 } else {
                     JOptionPane.showConfirmDialog(null, "Khách hàng Chưa đủ tuôi\n Khách hàng phải lớn hơn 14 tuổi", "thông báo", JOptionPane.CLOSED_OPTION);
                 }
@@ -538,7 +539,15 @@ public class NhapThongTinKhachHang extends javax.swing.JFrame {
         }
         if (txtCMND.getText().length() < 12 || txtCMND.getText().length() > 12) {
             sb.append("chứng minh nhân dân hay thẻ căn cước phải số đủ 12 số");
+            txtCMND.requestFocus();
+            return ;
         }
+          if(checkCMND(txtCMND.getText())==false){
+                JOptionPane.showConfirmDialog(null, "Số chứng minh nhân dân hay thẻ căn cước bị trùng\n xin vui lòng check lại thông  tin", "thông báo", JOptionPane.CLOSED_OPTION);
+               txtHoTen.requestFocus();
+               return ;
+         
+         }
 
         if (sb.length() > 0) {
             JOptionPane.showMessageDialog(rootPane,
@@ -581,18 +590,15 @@ public class NhapThongTinKhachHang extends javax.swing.JFrame {
 
         if (scmnd == null || sdt == null || tuoi == 0) {
             System.out.println("Loi");
-        } else {
+        } 
+        else {
             if (tuoi >= 14) {
-                if (checkCMND(scmnd)||checkTenKH(HotenKhachHang)) {
-                    KhachHang kh = new KhachHang(maKhachHang, HotenKhachHang, scmnd, sdt, tuoi, phuongTTT);
+                 KhachHang kh = new KhachHang(maKhachHang, HotenKhachHang, scmnd, sdt, tuoi, phuongTTT);
                     listKH.add(kh);
                     tableModel.addRow(new Object[]{maKhachHang, HotenKhachHang, scmnd, sdt, tuoi, phuongTTT});
                     f.delete();
                     docGhiFile.ghiFileKhachHang(listKH);
                     resetForm();
-                } else {
-                    JOptionPane.showConfirmDialog(null, "Số chứng minh nhân dân hay thẻ căn cước bị trùng\n xin vui lòng check lại thông  tin", "thông báo", JOptionPane.CLOSED_OPTION);
-                }
 
             } else {
                 JOptionPane.showConfirmDialog(null, "Khách hàng Chưa đủ tuôi\n Khách hàng phải lớn hơn 14 tuổi", "thông báo", JOptionPane.CLOSED_OPTION);
@@ -713,16 +719,9 @@ public class NhapThongTinKhachHang extends javax.swing.JFrame {
        txtHoTen.setText("");
        txtSDT.setText("");
        txtTuoi.setText("");
+       txtTimKiem.setText("");
         // TODO add your handling code here:
     }//GEN-LAST:event_btnReSetActionPerformed
-
-    private void btnLuuFiileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLuuFiileActionPerformed
-    int choice = JOptionPane.showConfirmDialog(rootPane, "Bạn có muốn Lưu thông tin vào file không?", "Hỏi", JOptionPane.YES_NO_OPTION);
-        if (choice == JOptionPane.YES_OPTION) {
-            f.delete();
-            docGhiFile.ghiFileKhachHang(listKH);
-        }        // TODO add your handling code here:
-    }//GEN-LAST:event_btnLuuFiileActionPerformed
 
     private void btnQuayLaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuayLaiActionPerformed
       // TODO add your handling code here:
@@ -772,7 +771,6 @@ public void close(){
     private javax.swing.JComboBox<String> boxPhuongThuThanhToan;
     private javax.swing.JComboBox<String> boxSapXep;
     private javax.swing.JButton btnChinhSua;
-    private javax.swing.JButton btnLuuFiile;
     private javax.swing.JButton btnQuayLai;
     private javax.swing.JButton btnReSet;
     private javax.swing.JButton btnSapXep;

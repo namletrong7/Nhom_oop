@@ -94,6 +94,7 @@ public class DoanhThu extends javax.swing.JFrame {
     }
 
     public void TongTienNgay() {
+        tongtien=0;
         for (DatPhong item : listDatPhong) {
             if (df.format(item.getNgayTra()).equals(txtNgay.getText())) {
                 tongtien += item.getTongTien();
@@ -102,6 +103,7 @@ public class DoanhThu extends javax.swing.JFrame {
     }
 
     public void TongTienThang() {
+          tongtien=0;
         DateFormat format = new SimpleDateFormat("MM");
         for (DatPhong item : listDatPhong) {
             if (format.format(item.getNgayTra()).equals(txtNgay.getText())) {
@@ -234,7 +236,7 @@ public class DoanhThu extends javax.swing.JFrame {
     }//GEN-LAST:event_tblDatPhongMouseClicked
 
     private void DoanhThuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DoanhThuActionPerformed
-
+        tableModel.setRowCount(0);
         TongTienNgay();
         System.out.println(tongtien);
         txttongTien.setText(String.valueOf(tongtien));
@@ -249,12 +251,15 @@ public class DoanhThu extends javax.swing.JFrame {
                 Date ngayTra = item.getNgayTra();
                 String ngayTra1 = df.format(ngayTra);
                 double tongTien = item.getTongTien();
+                
                 tableModel.addRow(new Object[]{maDatPhong, maphong, maKhachHang, ngayDat1, ngayTra1, tongTien});
+               
             }
         }
     }//GEN-LAST:event_DoanhThuActionPerformed
 
     private void DoanhThu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DoanhThu1ActionPerformed
+            tableModel.setRowCount(0);
         if (isNumeric(txtNgay.getText()) == true) {
             TongTienThang();
             System.out.println(tongtien);
