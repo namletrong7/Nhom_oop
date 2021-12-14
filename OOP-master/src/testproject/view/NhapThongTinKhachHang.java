@@ -431,7 +431,7 @@ public class NhapThongTinKhachHang extends javax.swing.JFrame {
               sb.append("sdt phải lớn hơn 10 số\n");
         }
         if(txtCMND.getText().length()<12 ||txtCMND.getText().length()>12 ){
-            sb.append("chứng minh nhân dân hay thẻ căn cước phải số đủ 12 số");
+             JOptionPane.showConfirmDialog(null,"Só chứng minh thư phải đủ 12 bạn nhé","thông báo",JOptionPane.ERROR_MESSAGE);
         }
         if(checkTenKH(txtHoTen.getText())==false){
              
@@ -538,11 +538,11 @@ public class NhapThongTinKhachHang extends javax.swing.JFrame {
             sb.append("sdt phải lớn hơn 10 số\n");
         }
         if (txtCMND.getText().length() < 12 || txtCMND.getText().length() > 12) {
-            sb.append("chứng minh nhân dân hay thẻ căn cước phải số đủ 12 số");
+             JOptionPane.showConfirmDialog(null, "Sô chứng minh nhân dân hoặc thẻ căn cước phải đủ 12 số", "thông báo", JOptionPane.CLOSED_OPTION);
             txtCMND.requestFocus();
             return ;
         }
-          if(checkCMND(txtCMND.getText())==false){
+         if(checkCMND(txtCMND.getText())==false){
                 JOptionPane.showConfirmDialog(null, "Số chứng minh nhân dân hay thẻ căn cước bị trùng\n xin vui lòng check lại thông  tin", "thông báo", JOptionPane.CLOSED_OPTION);
                txtHoTen.requestFocus();
                return ;
@@ -579,7 +579,7 @@ public class NhapThongTinKhachHang extends javax.swing.JFrame {
             tuoi = Integer.parseInt(txtTuoi.getText());
         } catch (Exception e) {
             JOptionPane.showConfirmDialog(null, "Tuổi đã bị nhập sai định dạng\n xin vui lòng nhập sô", "thông báo", JOptionPane.CLOSED_OPTION);
-
+            
         }
 
         try {
