@@ -180,7 +180,7 @@ public class DangNhap extends javax.swing.JFrame {
             txtPass.requestFocus();
             return;
         }
-        Menu.main();
+        new Menu().setVisible(true);
         System.out.println("a");
         this.dispose();
     }//GEN-LAST:event_btnDangNhapActionPerformed
